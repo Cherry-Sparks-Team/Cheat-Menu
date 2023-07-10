@@ -126,29 +126,6 @@ change_succession_single_youngest = {
     ai_will_do = 0
 }
 
-using_the_new_system = {
-	picture = gfx/interface/illustrations/decisions/cheat_tab.dds
-	title = use_new_system
-    desc = use_new_system_desc
-    selection_tooltip = use_new_system_tooltip
-    confirm_text = "CONFIRM_OKAY"
-
-	is_shown = {
-		has_character_flag = daddy_pika_cheat_menu
-		has_character_flag = army_spawn_menu
-	}
-
-	effect = {
-		save_scope_as = char_editor
-		add_character_flag = levy_size_flag
-		add_character_flag = last_event_60
-		add_character_flag = modifier_pg_1
-		trigger_event = dp_char_editor.999
-	}
-
-	ai_check_interval = 0
-}
-
 convert_religion = {
 	picture = gfx/interface/illustrations/decisions/cheat_tab.dds
 	title = conv_realm_religion_tt
@@ -195,6 +172,50 @@ convert_culture = {
 		every_vassal_or_below = {
 			limit = {}
 			set_culture = root.culture
+		}
+	}
+
+	ai_check_interval = 0
+}
+
+realm_control = {
+	picture = gfx/interface/illustrations/decisions/cheat_tab.dds
+	title = max_realm_control_TT
+    desc = max_realm_desc
+    selection_tooltip = are_you_sure_tt
+    confirm_text = "CONFIRM_OKAY"
+
+	is_shown = {
+		has_character_flag = daddy_pika_cheat_menu
+		has_character_flag = govt_menu
+	}
+
+	effect = {
+		every_realm_county = {
+			limit = {}
+			change_county_control = 100
+		}
+	}
+
+	ai_check_interval = 0
+}
+
+realm_development = {
+	picture = gfx/interface/illustrations/decisions/cheat_tab.dds
+	title = max_realm_development_TT
+    desc = max_realm_desc
+    selection_tooltip = are_you_sure_tt
+    confirm_text = "CONFIRM_OKAY"
+
+	is_shown = {
+		has_character_flag = daddy_pika_cheat_menu
+		has_character_flag = govt_menu
+	}
+
+	effect = {
+		every_realm_county = {
+			limit = {}
+			change_development_level = 100
 		}
 	}
 

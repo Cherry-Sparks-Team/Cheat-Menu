@@ -581,7 +581,7 @@ dp_char_editor.10 = {
 	}
 	override_background = { reference = tavern }
 	
-	#8 Options fit nicely into an event window
+	# 7 Options fit nicely into an event window
 	option = {
 		name = dp_char_editor.traits.special.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_1 } }
@@ -618,6 +618,9 @@ dp_char_editor.10 = {
 	option = {
 		name = dp_char_editor.traits.commander.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_1 } }
+		scope:char_editor = { 
+			add_character_flag = trait_menu_commander_pg_1 
+		}
 		trigger_event = dp_char_editor.26
 	}
 
@@ -628,7 +631,16 @@ dp_char_editor.10 = {
 	}
 
 	### PAGE 2 ###
-
+	
+	option = {
+		name = dp_char_editor.traits.fame.t
+		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
+		scope:char_editor = {
+			add_character_flag = trait_menu_fame_pg_1
+		}
+		trigger_event = dp_char_editor.16
+	}
+	
 	option = {
 		name = dp_char_editor.traits.infamy.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
@@ -641,6 +653,7 @@ dp_char_editor.10 = {
 	option = {
 		name = dp_char_editor.traits.lifestyle.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
+		custom_tooltip = dp_char_editor.traits.lifestyle_TT
 		scope:char_editor = {
 			add_character_flag = trait_menu_lifestyle_pg_1
 		}
@@ -648,9 +661,28 @@ dp_char_editor.10 = {
 	}
 
 	option = {
+		name = dp_char_editor.traits.learned.t
+		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
+		custom_tooltip = dp_char_editor.traits.learned_TT
+		scope:char_editor = {
+			add_character_flag = trait_menu_learned_pg_1
+		}
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
 		name = dp_char_editor.traits.lifestyle_perk.t
 		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
 		trigger_event = dp_char_editor.15
+	}
+
+	option = {
+		name = dp_char_editor.traits.birth.t
+		trigger = { scope:char_editor = { has_character_flag = trait_menu_pg_2 } }
+		scope:char_editor = {
+			add_character_flag = trait_menu_birth_pg_1
+		}
+		trigger_event = dp_char_editor.27
 	}
 
 	option = {
@@ -1177,7 +1209,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = adulterer } 
+			LIT_trait_check = { TRAIT = adulterer } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1188,7 +1220,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = fornicator } 
+			LIT_trait_check = { TRAIT = fornicator } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1199,7 +1231,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = deviant } 
+			LIT_trait_check = { TRAIT = deviant } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1210,7 +1242,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = kinslayer_1 } 
+			LIT_trait_check = { TRAIT = kinslayer_1 } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1221,7 +1253,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = kinslayer_2 } 
+			LIT_trait_check = { TRAIT = kinslayer_2 } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1232,7 +1264,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = kinslayer_3 } 
+			LIT_trait_check = { TRAIT = kinslayer_3 } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1243,7 +1275,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = incestuous} 
+			LIT_trait_check = { TRAIT = incestuous} 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1251,10 +1283,10 @@ dp_char_editor.13 = {
 	option = {
 		name = trait_sodomite
 		trigger = {
-			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_1 }
+			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = sodomite } 
+			LIT_trait_check = { TRAIT = sodomite } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1265,7 +1297,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = witch } 
+			LIT_trait_check = { TRAIT = witch } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1276,7 +1308,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = cannibal } 
+			LIT_trait_check = { TRAIT = cannibal } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1287,7 +1319,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = excommunicated } 
+			LIT_trait_check = { TRAIT = excommunicated } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1298,7 +1330,7 @@ dp_char_editor.13 = {
 			scope:char_editor = { has_character_flag = trait_menu_infamy_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = murderer } 
+			LIT_trait_check = { TRAIT = murderer } 
 		}
 		trigger_event = dp_char_editor.13
 	}
@@ -1345,7 +1377,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = celibate } 
+			LIT_trait_check = { TRAIT = celibate } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1356,7 +1388,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_herbalist } 
+			LIT_trait_check = { TRAIT = lifestyle_herbalist } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1367,7 +1399,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_gardener } 
+			LIT_trait_check = { TRAIT = lifestyle_gardener } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1378,7 +1410,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = pilgrim } 
+			LIT_trait_check = { TRAIT = pilgrim } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1389,7 +1421,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_mystic } 
+			LIT_trait_check = { TRAIT = lifestyle_mystic } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1400,7 +1432,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_hunter } 
+			LIT_trait_check = { TRAIT = lifestyle_hunter } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1411,7 +1443,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_1 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_traveler } 
+			LIT_trait_check = { TRAIT = lifestyle_traveler } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1423,7 +1455,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = tourney_participant } 
+			LIT_trait_check = { TRAIT = tourney_participant } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1434,7 +1466,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_blademaster} 
+			LIT_trait_check = { TRAIT = lifestyle_blademaster} 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1445,7 +1477,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_reveler } 
+			LIT_trait_check = { TRAIT = lifestyle_reveler } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1456,7 +1488,7 @@ dp_char_editor.14 = {
 			scope:char_editor = { has_character_flag = trait_menu_lifestyle_pg_2 }
 		}
 		scope:char_editor = {
-			LIT_personality_trait_check = { TRAIT = lifestyle_physician } 
+			LIT_trait_check = { TRAIT = lifestyle_physician } 
 		}
 		trigger_event = dp_char_editor.14
 	}
@@ -1524,6 +1556,278 @@ dp_char_editor.15 = {
 
 	option = {
 		name = dp_char_editor_back
+		trigger_event = dp_char_editor.10
+	}
+}
+
+dp_char_editor.16 = {
+	type = character_event
+	title = dp_char_editor.traits.fame.t
+	desc = dp_char_editor_menu.traits.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = throne_room }
+
+	option = {
+		name = trait_pilgrim
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = pilgrim } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_hajjah
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = hajjaj } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_devoted
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = devoted} 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_sayyid
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = sayyid } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_saoshyant
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = saoshyant } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_saoshyant_descendant
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = saoshyant_descendant } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_savior
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_1 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = savior } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = trait_divine_blood
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = divine_blood } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_blood_of_prophet
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = blood_of_prophet} 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_faith_warrior
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = faith_warrior} 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_saint
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = saint } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_order_member
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = order_member } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_berserker
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = berserker } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_shieldmaiden_female
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = shieldmaiden } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	### PAGE 3 ###
+
+	option = {
+		name = trait_varangian
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = varangian } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_poet
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = poet } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_viking_has_longships
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = viking } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_heresiarch
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = heresiarch } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_peasant_leader
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = peasant_leader } 
+
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_loyal
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = loyal } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = trait_disloyal
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_fame_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = disloyal } 
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			trait_menu_fame_forward = yes
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			trait_menu_fame_backward = yes
+		}
+		trigger_event = dp_char_editor.16
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_trait_menu_fame_pgs = yes
+		}
 		trigger_event = dp_char_editor.10
 	}
 }
@@ -2576,7 +2880,7 @@ dp_char_editor.25 = {
 	}
 }
 
-### COMMANDER TRAITS 1 ###
+### COMMANDER TRAITS ###
 
 dp_char_editor.26 = {
 	type = character_event
@@ -2591,292 +2895,380 @@ dp_char_editor.26 = {
 
 	option = {
 		name = trait_logistician
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = logistician
-				}
-				remove_trait = logistician
-			}
-			else = {
-				add_trait = logistician
-			}
+			LIT_trait_check = { TRAIT = logistician } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_military_engineer
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = military_engineer
-				}
-				remove_trait = military_engineer
-			}
-			else = {
-				add_trait = military_engineer
-			}
+			LIT_trait_check = { TRAIT = military_engineer } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_aggressive_attacker
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = aggressive_attacker
-				}
-				remove_trait = aggressive_attacker
-			}
-			else = {
-				add_trait = aggressive_attacker
-			}
+			LIT_trait_check = { TRAIT = aggressive_attacker } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_unyielding_defender
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = unyielding_defender
-				}
-				remove_trait = unyielding_defender
-			}
-			else = {
-				add_trait = unyielding_defender
-			}
+			LIT_trait_check = { TRAIT = unyielding_defender } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_forder
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = forder
-				}
-				remove_trait = forder
-			}
-			else = {
-				add_trait = forder
-			}
+			LIT_trait_check = { TRAIT = forder } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_flexible_leader
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = flexible_leader
-				}
-				remove_trait = flexible_leader
-			}
-			else = {
-				add_trait = flexible_leader
-			}
+			LIT_trait_check = { TRAIT = flexible_leader } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = trait_desert_warrior
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = desert_warrior
-				}
-				remove_trait = desert_warrior
-			}
-			else = {
-				add_trait = desert_warrior
-			}
+			LIT_trait_check = { TRAIT = desert_warrior } 
 		}
 		trigger_event = dp_char_editor.26
 	}
+
+	### PAGE 2 ###
 
 	option = {
 		name = trait_jungle_stalker
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = jungle_stalker
-				}
-				remove_trait = jungle_stalker
-			}
-			else = {
-				add_trait = jungle_stalker
-			}
+			LIT_trait_check = { TRAIT = jungle_stalker } 
 		}
 		trigger_event = dp_char_editor.26
 	}
 
 	option = {
-		name = dp_char_editor_next
-		trigger_event = dp_char_editor.27
+		name = trait_reaver
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = reaver} 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_reckless
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = reckless } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_holy_warrior
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = holy_warrior } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+	option = {
+		name = trait_open_terrain_expert
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = open_terrain_expert } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_rough_terrain_expert
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = rough_terrain_expert } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_forest_fighter
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = forest_fighter } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	### PAGE 3 ###
+
+	option = {
+		name = trait_cautious_leader
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = cautious_leader } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_organizer
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = organizer } 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = trait_winter_soldier
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_commander_pg_3 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = winter_soldier} 
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			trait_menu_commander_forward = yes
+		}
+		trigger_event = dp_char_editor.26
+	}
+
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			trait_menu_commander_backward = yes
+		}
+		trigger_event = dp_char_editor.26
 	}
 
 	option = {
 		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_trait_menu_commander_pgs = yes
+		}
 		trigger_event = dp_char_editor.10
 	}
 }
 
-### COMMANDER TRAITS 2 ###
-
 dp_char_editor.27 = {
 	type = character_event
-	title = dp_char_editor.traits.commander.t
-	desc = dp_char_editor.traits.commander.d
+	title = dp_char_editor.traits.birth.t
+	desc = dp_char_editor_menu.traits.d
 	theme = default
 	left_portrait = {
 		character = scope:char_editor
 		animation = personality_bold
 	}
-	override_background = { reference = battlefield }
-
+	override_background = { reference = bedchamber }
 
 	option = {
-		name = trait_reaver
+		name = trait_bastard
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = reaver
-				}
-				remove_trait = reaver
-			}
-			else = {
-				add_trait = reaver
-			}
+			LIT_trait_check = { TRAIT = bastard } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_reckless
+		name = trait_legitimized_bastard
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = reckless
-				}
-				remove_trait = reckless
-			}
-			else = {
-				add_trait = reckless
-			}
+			LIT_trait_check = { TRAIT = legitimized_bastard } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_holy_warrior
+		name = trait_disputed_heritage
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = holy_warrior
-				}
-				remove_trait = holy_warrior
-			}
-			else = {
-				add_trait = holy_warrior
-			}
+			LIT_trait_check = { TRAIT = disputed_heritage } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_open_terrain_expert
+		name = trait_child_of_concubine
+		trigger = {
+			AND = {
+				scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+				scope:char_editor = { is_male = yes }
+			}		
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = open_terrain_expert
-				}
-				remove_trait = open_terrain_expert
-			}
-			else = {
-				add_trait = open_terrain_expert
-			}
+			LIT_trait_check = { TRAIT = child_of_concubine_male } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_rough_terrain_expert
+		name = trait_child_of_concubine
+		trigger = {
+			AND = {
+				scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+				scope:char_editor = { is_female = yes }
+			}		
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = rough_terrain_expert
-				}
-				remove_trait = rough_terrain_expert
-			}
-			else = {
-				add_trait = rough_terrain_expert
-			}
+			LIT_trait_check = { TRAIT = child_of_concubine_female } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_forest_fighter
+		name = trait_wild_oat
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = forest_fighter
-				}
-				remove_trait = forest_fighter
-			}
-			else = {
-				add_trait = forest_fighter
-			}
+			LIT_trait_check = { TRAIT = wild_oat } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_cautious_leader
+		name = trait_bastard_founder
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = cautious_leader
-				}
-				remove_trait = cautious_leader
-			}
-			else = {
-				add_trait = cautious_leader
-			}
+			LIT_trait_check = { TRAIT = bastard_founder } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = trait_organizer
+		name = trait_twin
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_1 }
+		}
 		scope:char_editor = {
-			if = {
-				limit = {
-					has_trait = organizer
-				}
-				remove_trait = organizer
-			}
-			else = {
-				add_trait = organizer
-			}
+			LIT_trait_check = { TRAIT = twin } 
+		}
+		trigger_event = dp_char_editor.27
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = trait_born_in_the_purple
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = born_in_the_purple } 
 		}
 		trigger_event = dp_char_editor.27
 	}
 
 	option = {
-		name = dp_char_editor_next
-		trigger_event = dp_char_editor.26
+		name = trait_augustus
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = augustus } 
+		}
+		trigger_event = dp_char_editor.27
+	}
+
+	option = {
+		name = trait_reincarnation
+		trigger = {
+			scope:char_editor = { has_character_flag = trait_menu_birth_pg_2 }
+		}
+		scope:char_editor = {
+			LIT_trait_check = { TRAIT = reincarnation } 
+		}
+		trigger_event = dp_char_editor.27
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			trait_menu_birth_forward = yes
+		}
+		trigger_event = dp_char_editor.27
+	}
+
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			trait_menu_birth_backward = yes
+		}
+		trigger_event = dp_char_editor.27
 	}
 
 	option = {
 		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_trait_menu_birth_pgs = yes
+		}
 		trigger_event = dp_char_editor.10
 	}
 }
@@ -9036,8 +9428,8 @@ dp_char_editor.47 = {
 		custom_tooltip = dp_char_editor.presents.randomizer_TT
 		hidden_effect = { 
 			scope:char_editor = {
-			clear_personality_traits_effect = yes
-			personality_trait_randomizer_effect = yes
+				clear_personality_traits_effect = yes
+				personality_trait_randomizer_effect = yes
 			}
 		}
 		trigger_event = dp_char_editor.47
@@ -9212,7 +9604,7 @@ dp_char_editor.48 = {
 	}
 }
 
-dp_char_editor.49 = {
+dp_char_editor.49 = { ### Innovation Presents
 	type = character_event
 	title = dp_char_editor.presents.innovation.t
 	desc = dp_char_editor.presents.innovation.d
@@ -9222,30 +9614,36 @@ dp_char_editor.49 = {
 		animation = personality_bold
 	}
 	override_background = { reference = study }
+	
+	option = {
+		name = dp_char_editor_presents_innovation_regional.t
+		custom_tooltip = dp_char_editor_presents_innovation_regional_TT
+		trigger_event = dp_char_editor.67
+	}
+	option = {
+		name = dp_char_editor_presents_innovation_select.t
+		custom_tooltip = dp_char_editor_presents_innovation_select_TT
+		trigger_event = dp_char_editor.68
+	}
 	option = {
 		name = tribal_innovation_decision
 		trigger_event = dp_char_editor.49
 		innovation_tribal_effect = yes
 	}
 	option = {
-		name = early_medival_innovation_decision
+		name = early_innovation_decision
 		trigger_event = dp_char_editor.49
 		innovation_early_medival_effect = yes
 	}
 	option = {
-		name = high_medival_innovation_decision
+		name = high_innovation_decision
 		trigger_event = dp_char_editor.49
 		innovation_high_medival_effect = yes
 	}
 	option = {
-		name = late_medival_innovation_decision
+		name = late_innovation_decision
 		trigger_event = dp_char_editor.49
 		innovation_late_medival_effect = yes
-	}
-	option = {
-		name = special_innovation_decision
-		trigger_event = dp_char_editor.49
-		innovation_special_effect = yes
 	}
 	option = {
 		name = dp_char_editor_back
@@ -9263,6 +9661,15 @@ dp_char_editor.50 = {
 		animation = personality_bold
 	}
 	override_background = { reference = market_west }
+	
+	option = {
+		name = dp_char_editor_main_menu
+		scope:char_editor = {
+			remove_modifier_pgs = yes
+			remove_all_modifier_go_back_flags = yes
+		}
+		trigger_event = dp_char_editor.1000
+	}
 	option = {
 		name = dp_char_editor.modifiers.prestige.t
 		trigger = { scope:char_editor = { has_character_flag = modifier_pg_1 } }
@@ -9347,14 +9754,6 @@ dp_char_editor.50 = {
 		name = dp_char_editor_backward
 		modifier_backward = yes
 		trigger_event = dp_char_editor.50
-	}
-	option = {
-		name = dp_char_editor_main_menu
-		scope:char_editor = {
-			remove_modifier_pgs = yes
-			remove_all_modifier_go_back_flags = yes
-		}
-		trigger_event = dp_char_editor.1000
 	}
 }
 
@@ -12483,11 +12882,6 @@ dp_char_editor.61 = {
 		trigger_event = dp_char_editor.999
 	}
 	option = {
-		name = MOD_RANDOM_SKILLS_PER_CHILD
-		scope:char_editor = { add_character_flag = random_skills_per_child_flag }
-		trigger_event = dp_char_editor.999
-	}
-	option = {
 		name = dp_char_editor_back
 		trigger_event = dp_char_editor.50
 		scope:char_editor = {
@@ -12569,9 +12963,9 @@ dp_char_editor.63 = {
 	}
 	
 	option = {
-		name = trait_family_first
+		name = trait_strategist
 		scope:char_editor = {
-			LIT_trait_check = { TRAIT = family_first }
+			LIT_trait_check = { TRAIT = strategist }
 		}
 		trigger_event = dp_char_editor.63
 	}
@@ -12711,6 +13105,1582 @@ dp_char_editor.66 = {
 	}
 }
 
+### Innovation Regional ###
+
+dp_char_editor.67 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_regional.t
+	desc = dp_char_editor.presents.innovation_regional.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = tribal_regional_innovation_decision
+		scope:char_editor = {
+			innovation_tribal_regional_effect = yes
+		}
+		trigger_event = dp_char_editor.67
+	}
+	
+	option = {
+		name = early_regional_innovation_decision
+		scope:char_editor = {
+			innovation_early_medival_regional_effect = yes
+		}
+		trigger_event = dp_char_editor.67
+	}
+	
+	option = {
+		name = high_regional_innovation_decision
+		scope:char_editor = {
+			innovation_high_medival_regional_effect = yes
+		}
+		trigger_event = dp_char_editor.67
+	}
+
+	option = {
+		name = late_regional_innovation_decision
+		scope:char_editor = {
+			innovation_late_medival_regional_effect = yes
+		}
+		trigger_event = dp_char_editor.67
+	}
+
+	option = {
+		name = dp_char_editor_back
+		trigger_event = dp_char_editor.49
+	}
+}
+
+### INNOVATION SELECT INDIVIDUAL INNOVATIONS ###
+
+dp_char_editor.68 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = tribal_innovation_decision
+		scope:char_editor = {
+			add_character_flag = tribal_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.69
+	}
+	
+	option = {
+		name = early_innovation_decision
+		scope:char_editor = {
+			add_character_flag = early_medival_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.70
+	}
+	
+	option = {
+		name = high_innovation_decision
+		scope:char_editor = {
+			add_character_flag = high_medival_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = late_innovation_decision
+		scope:char_editor = {
+			add_character_flag = late_medival_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = tribal_regional_innovation_decision
+		scope:char_editor = {
+			add_character_flag = tribal_regional_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.73
+	}
+	
+	option = {
+		name = early_regional_innovation_decision
+		scope:char_editor = {
+			add_character_flag = early_regional_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.74
+	}
+	
+	option = {
+		name = high_regional_innovation_decision
+		scope:char_editor = {
+			add_character_flag = high_regional_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = late_regional_innovation_decision
+		scope:char_editor = {
+			add_character_flag = late_regional_innovation_select_pg_1
+		}
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = dp_char_editor_back
+		trigger_event = dp_char_editor.49
+	}
+}
+
+### TRIBAL INNOVATION SELECT ###
+
+dp_char_editor.69 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_motte
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_motte }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_catapult
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_catapult}	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_barracks
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_barracks }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_mustering_grounds
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_mustering_grounds }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_bannus
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_bannus }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_quilted_armor
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_quilted_armor }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_development_01
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_development_01}	
+		trigger_event = dp_char_editor.69
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_currency_01
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_currency_01 }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_gavelkind
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_gavelkind }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_crop_rotation
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_crop_rotation}	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_city_planning
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_city_planning	}
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_casus_belli
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_casus_belli }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_plenary_assemblies
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_plenary_assemblies }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = innovation_ledger
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_ledger }	
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			tribal_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.69
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			tribal_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.69
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_tribal_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### EARLY MEDIVAL INNOVATION SELECT ###
+
+dp_char_editor.70 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_battlements
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_battlements }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_mangonel
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_mangonel }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_burhs
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_burhs }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_house_soldiers
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_house_soldiers }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_horseshoes
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_horseshoes }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_arched_saddle
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_arched_saddle }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_hereditary_rule
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_hereditary_rule }	
+		trigger_event = dp_char_editor.70
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_manorialism
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_manorialism }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_development_02
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_development_02 }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_currency_02
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_currency_02 }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_royal_prerogative
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_royal_prerogative	}
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_chronicle_writing
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_chronicle_writing }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_armilary_sphere
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_armilary_sphere }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = innovation_baliffs
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_baliffs }	
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			early_medival_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.70
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			early_medival_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.70
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_early_medival_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### HIGH MEDIVAL INNOVATION SELECT ###
+
+dp_char_editor.71 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_hoardings
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_hoardings }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_trebuchet
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_trebuchet }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_castle_baileys
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_castle_baileys }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_men_at_arms
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_men_at_arms }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_knighthood
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_knighthood }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_advanced_bowmaking
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_advanced_bowmaking}	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_heraldry
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_heraldry}	
+		trigger_event = dp_char_editor.71
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_windmills
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_windmills }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_divine_right
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_divine_right }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_land_grants
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_land_grants}	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_scutage
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_scutage	}
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_guilds
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_guilds }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_development_03
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_development_03}	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = innovation_currency_03
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_currency_03 }	
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			high_medival_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.71
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			high_medival_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.71
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_high_medival_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### LATE MEDIVAL INNOVATION SELECT ###
+
+dp_char_editor.72 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_machicolations
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_machicolations}	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_bombard
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_bombard }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_royal_armory
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_royal_armory }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_standing_armies
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_standing_armies }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_sappers
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_sappers }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_plate_armor
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_plate_armor }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_primogeniture
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_primogeniture }	
+		trigger_event = dp_char_editor.72
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_cranes
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_cranes}	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_noblesse_oblige
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_noblesse_oblige }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_rightful_ownership
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_rightful_ownership }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_ermine_cloaks
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_ermine_cloaks}
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_court_officials
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_court_officials }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_development_04
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_development_04 }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = innovation_currency_04
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_medival_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_currency_04 }	
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			late_medival_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.72
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			late_medival_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.72
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_late_medival_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### TRIBAL REGIONAL INNOVATION SELECT ###
+
+dp_char_editor.73 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_table_of_princes
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_table_of_princes }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_longboats
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_longboats }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_elephantry
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_elephantry }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_war_camels
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_war_camels }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_wootz_steel
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_wootz_steel }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_african_canoes
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_african_canoes }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_caballeros
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_caballeros }	
+		trigger_event = dp_char_editor.73
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_bamboo_bows
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_bamboo_bows }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_sahel_horsemen
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_sahel_horsemen }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_varangian_adventurers
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_varangian_adventurers}	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_all_things
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_all_things}
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_repeating_crossbow
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_repeating_crossbow }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_pole_vault
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = tribal_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_pole_vault }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			tribal_regional_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.73
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			tribal_regional_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_tribal_regional_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### EARLY MEDIVAL REGIONAL INNOVATION SELECT ###
+
+dp_char_editor.74 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_reconquista
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_reconquista }	
+		trigger_event = dp_char_editor.73
+	}
+
+	option = {
+		name = innovation_stem_duchies
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_stem_duchies }	
+		trigger_event = dp_char_editor.74
+	}
+
+	option = {
+		name = innovation_ghilman
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = early_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_ghilman }	
+		trigger_event = dp_char_editor.74
+	}
+
+	option = {
+		name = dp_char_editor_back
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### HIGH MEDIVAL REGIONAL INNOVATION SELECT ###
+
+dp_char_editor.75 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_east_settling
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_east_settling }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_seigneurialism
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_seigneurialism }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_muladi
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_muladi }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_french_peerage
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_french_peerage }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_hobbies
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_hobbies }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_pike_columns
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_pike_columns }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = innovation_desert_tactics
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_desert_tactics }	
+		trigger_event = dp_char_editor.75
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_sarawit
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = high_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_sarawit }	
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			high_regional_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.75
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			high_regional_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.75
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_high_regional_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### LATE MEDIVAL REGIONAL INNOVATION SELECT ###
+
+dp_char_editor.76 = {
+	type = character_event
+	title = dp_char_editor_presents_innovation_select.t
+	desc = dp_char_editor.presents.innovation_select.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = innovation_wierdijks
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_wierdijks }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_condottieri
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_condottieri }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_deccan_unity
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_deccan_unity }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_valets
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_valets }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_zweihanders
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_zweihanders }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_adaptive_militia
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_adaptive_militia }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = innovation_legionnaires
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_1
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_legionnaires }	
+		trigger_event = dp_char_editor.76
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = innovation_rectilinear_schiltron
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = late_regional_innovation_select_pg_2
+			}
+		}
+		LIT_innovation_check = { KEY = innovation_rectilinear_schiltron }	
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			late_regional_innovation_select_forward = yes
+		}
+		trigger_event = dp_char_editor.76
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			late_regional_innovation_select_backward = yes
+		}
+		trigger_event = dp_char_editor.76
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_late_regional_innovation_select_pgs = yes
+		}
+		trigger_event = dp_char_editor.68
+	}
+}
+
+### TRAIT MENU LEARNED TRAITS ADD XP ###
+
+dp_char_editor.77 = {
+	type = character_event
+	title = dp_char_editor.traits.learned.t
+	desc = dp_char_editor.traits.learned.d
+	theme = default
+	left_portrait = {
+		character = scope:char_editor
+		animation = personality_bold
+	}
+	override_background = { reference = temple }
+
+	option = {
+		name = trait_pilgrim
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check = { TRAIT = pilgrim VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_lifestyle_mystic
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check = { TRAIT = lifestyle_mystic VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_hunter
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = lifestyle_hunter TRACK = hunter VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_falconer
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = lifestyle_hunter TRACK = falconer VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_travel
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = lifestyle_traveler TRACK = travel VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_danger
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = lifestyle_traveler TRACK = danger VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_lifestyle_blademaster
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_1
+			}
+		}
+		LIT_learned_trait_check = { TRAIT = lifestyle_blademaster VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	### PAGE 2 ###
+
+	option = {
+		name = trait_track_foot
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = tourney_participant TRACK = foot VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_bow
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = tourney_participant TRACK = bow VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_horse
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = tourney_participant TRACK = horse VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_track_wit
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check_track = { TRAIT = tourney_participant TRACK = wit VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_lifestyle_reveler
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check = { TRAIT = lifestyle_reveler VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = trait_lifestyle_physician
+		trigger = {
+			scope:char_editor = {
+				has_character_flag = trait_menu_learned_pg_2
+			}
+		}
+		LIT_learned_trait_check = { TRAIT = lifestyle_physician VALUE = 50 }
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = dp_char_editor_forward
+		scope:char_editor = {
+			trait_menu_learned_forward = yes
+		}
+		trigger_event = dp_char_editor.77
+	}
+	option = {
+		name = dp_char_editor_backward
+		scope:char_editor = {
+			trait_menu_learned_backward = yes
+		}
+		trigger_event = dp_char_editor.77
+	}
+
+	option = {
+		name = dp_char_editor_back
+		scope:char_editor = {
+			remove_trait_menu_learned_pgs = yes
+		}
+		trigger_event = dp_char_editor.10
+	}
+}
+
 ### Customization Menu ###
 
 dp_char_editor.999 = {
@@ -12834,6 +14804,12 @@ dp_char_editor.1000 = {
 	override_background = { reference = corridor_day }
 	
 	immediate = {
+		scope:char_editor = {
+			remove_modifier_pgs = yes
+			remove_all_modifier_go_back_flags = yes
+			remove_all_culture_pgs = yes
+			remove_all_religion_pgs = yes
+		}
 	}
 	
 	option = {
