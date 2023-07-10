@@ -208,16 +208,6 @@ prowess_per_stress_level_neg = {
 	prowess_per_stress_level = -1
 	stacking = yes
 }
-random_skills_per_child = {
-	icon = family_positive
-	random_skills_per_child = 1
-	stacking = yes
-}
-random_skills_per_child_neg = {
-	icon = family_negative
-	random_skills_per_child = -1
-	stacking = yes
-}
 fertility_modifier = {
 	icon = fertility_positive
 	fertility = 0.01
@@ -890,22 +880,22 @@ knight_effectiveness_mult_neg = {
 } 
 title_creation_cost = {
 	icon = economy_negative
-	title_creation_cost = 50
+	title_creation_cost = -50
 	stacking = yes
 } 
 title_creation_cost_neg = {
 	icon = economy_positive
-	title_creation_cost = -50
+	title_creation_cost = 50
 	stacking = yes
 } 
 title_creation_cost_mult = {
 	icon = economy_negative
-	title_creation_cost_mult = 0.25
+	title_creation_cost_mult = -0.25
 	stacking = yes
 } 
 title_creation_cost_mult_neg = {
 	icon = economy_positive
-	title_creation_cost_mult = -0.25
+	title_creation_cost_mult = 0.25
 	stacking = yes
 } 
 monthly_lifestyle_xp_gain_mult = {

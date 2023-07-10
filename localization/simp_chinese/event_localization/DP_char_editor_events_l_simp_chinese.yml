@@ -1,6 +1,8 @@
 ﻿l_simp_chinese:
+ 
  dp_char_editor.main_menu.t:1 "角色修改菜单"
  dp_char_editor.main_menu.d:0 "欢迎来到Daddy Pika的角色编辑器。根据自己的喜好编辑你的角色!"
+
  dp_char_editor.naming.t:1 "编辑角色姓名"
  dp_char_editor.naming.d:0 "输入您要给角色起的名字"
  dp_char_editor.skill.t:1 "编辑技能点数"
@@ -12,6 +14,7 @@
  dp_char_editor.culture.group.d:0 "选择一个文化组。这将引导你选择该文化组中的文化。"
  dp_char_editor.religion.group.t:1 "编辑信仰"
  dp_char_editor.religion.group.d:0 "选择宗教，有不止一种信仰的宗教会提供一份可供选择的信仰菜单"
+
  dp_char_editor_menu.traits.t:1 "编辑特质"
  dp_char_editor_menu.traits.d:0 "选择你要添加的特质类别。如果角色已经拥有此特质，再次点击将会移除"
  dp_char_editor.traits.presents.t:1 "添加特质"
@@ -40,18 +43,25 @@
  dp_char_editor.traits.commander.d:0 "选择你要添加的将领特质。如果角色已经拥有此特质，再次点击将会移除"
  dp_char_editor.traits.health.t:1 "健康特质"
  dp_char_editor.traits.health.d:0 "选择你要添加的健康特质。如果角色已经拥有此特质，再次点击将会移除"
+ dp_char_editor.traits.fame.t:1 "Fame Traits"
  dp_char_editor.traits.infamy.t:1 "恶名特质"
  dp_char_editor.traits.lifestyle.t:1 "生活方式特质"
+ dp_char_editor.traits.learned.t:1 "Learned Traits Add XP"
+ dp_char_editor.traits.learned.d:1 "Choose a trait that you want to add xp to."
+ dp_char_editor.traits.learned_TT:1 "Opens a menu that will allow you to pick learned traits to add xp to."
  dp_char_editor.traits.lifestyle_perk.t:1 "生活方式点数特质"
  dp_char_editor.traits.lifestyle_perk_diplomacy.t:1 "外交特质"
  dp_char_editor.traits.lifestyle_perk_martial.t:1 "军事特质"
  dp_char_editor.traits.lifestyle_perk_stewardship.t:1 "管理特质"
  dp_char_editor.traits.lifestyle_perk_intrigue.t:1 "谋略特质"
  dp_char_editor.traits.lifestyle_perk_learning.t:1 "学识特质"
+ dp_char_editor.traits.birth.t:1 "Birth Traits"
+ 
  dp_char_editor_next:0 "下一页"
  dp_char_editor_back:0 "返回"
  dp_char_editor_main_menu:0 "返回主菜单"
  dp_char_editor_end:0 "完成修改"
+ 
  dp_char_editor.all.t:1 "修改全部"
  dp_char_editor.martial.t:1 "修改[martial_i]$martial_modifier$"
  dp_char_editor.diplomacy.t:1 "修改[diplomacy_i]$diplomacy_modifier$"
@@ -60,14 +70,17 @@
  dp_char_editor.learning.t:1 "修改[learning_i]$learning_modifier$"
  dp_char_editor.prowess.t:1 "修改[prowess_i] $prowess_modifier$"
  dp_char_editor.skills.d:0 "编辑角色的技能点"
+ 
  dp_char_editor.yes:0 "是"
  dp_char_editor.no:0 "不"
+ 
  dp_char_editor.skill.add10:0 "增加点数:#P 10#!"
  dp_char_editor.skill.add5:0 "增加点数:#P 5#!"
  dp_char_editor.skill.add1:0 "增加点数:#P 1#!"
  dp_char_editor.skill.minus1:0 "减少点数:#N -1#!"
  dp_char_editor.skill.minus5:0 "减少点数:#N -5#!"
  dp_char_editor.skill.minus10:0 "减少点数:#N -10#!"
+ 
  dp_char_editor.traits.education:0 "教育特质"
  dp_char_editor.traits.personality:0 "个性特质"
  dp_char_editor.traits.stress:0 "选择压力特质"
@@ -78,50 +91,75 @@
  dp_char_editor.traits.education.stewardship:0 "[stewardship_i] $stewardship_modifier$"
  dp_char_editor.traits.education.learning:0 "[learning_i] $learning_modifier$"
  dp_char_editor.traits.education.martial.prowess:0 "[prowess_i] $prowess_modifier$"
+ 
  dp_char_editor.traits.health.possessed_genetic:0 "$trait_possessed_1$ (遗传)"
  dp_char_editor.traits.health.lunatic_genetic:0 "$trait_lunatic_1$ (遗传)"
  dp_char_editor.traits.health.depressed_genetic:0 "$trait_depressed_1$ (遗传)"
+ 
  dp_char_editor.presents.t:0 "特殊特质菜单"
  dp_char_editor.presents.d:0 "轻松一点，特质到手"
+ 
  dp_char_editor.presents.lifestyle.t:0 "生活方式"
  dp_char_editor.presents.lifestyle.d:0 ""
+ 
  dp_char_editor.presents.health.t:0 "健康特质"
  dp_char_editor.presents.health.d:0 ""
+ 
  dp_char_editor.presents.eliminate_problems:0 "移除负面特质"
  dp_char_editor.presents.good_genes:0 "正面健康特质"
  dp_char_editor.presents.bad_genes:0 "负面健康特质"
+ 
  dp_char_editor.presents.traits.t:0 "其他特质"
  dp_char_editor.presents.traits.d:0 ""
+ 
  dp_char_editor.presents.randomizer:0 "性格特质"
  dp_char_editor.presents.randomizer_TT:0 "将移除全部性格特质并用三个随机性格替换。"
  dp_char_editor.presents.special_traits:0 "特殊特质"
  dp_char_editor.presents.commander:0 "将领特质"
+ 
  dp_char_editor.presents.characters.t:0 "角色呈现"
  dp_char_editor.presents.characters.d:0 ""
+ 
  dp_char_editor.presents.chungus:0 "巨人"
  dp_char_editor.presents.midget:0 "侏儒"
  dp_char_editor.presents.ghostly:0 "白化病+纺锤身形(让其他人觉得恐怖)"
+ 
  dp_char_editor.presents.innovation.t:0 "文化革新"
- dp_char_editor.presents.innovation.d:0 ""
+ dp_char_editor.presents.innovation.d:0 "Add all cultural innovations of a specific era."
+ dp_char_editor_presents_innovation_regional.t:0 "Innovations: Regional"
+ dp_char_editor.presents.innovation_regional.d:0 "Add all regional cultural innovations of a specific era."
+ dp_char_editor_presents_innovation_regional_TT:0 "Shows a menu where you can choose an era to add all cultural and regional innovations for."
+ dp_char_editor_presents_innovation_select.t:0 "Innovations: Select"
+ dp_char_editor.presents.innovation_select.d:0 "Select an era to pick which innovations to add or remove."
+ dp_char_editor_presents_innovation_select_TT:0 "Shows a menu where you can choose individual innovations to give a culture, organized into seperate options for each era."
+
  tribal_innovation_decision:0 "文化革新: 部落时期"
- early_medival_innovation_decision:0 "文化革新: 中世纪早期"
- high_medival_innovation_decision:0 "文化革新: 中世纪盛期"
- late_medival_innovation_decision:0 "文化革新: 中世纪晚期"
- special_innovation_decision:0 "文化革新: 特殊革新"
+ early_innovation_decision:0 "文化革新: 中世纪早期"
+ high_innovation_decision:0 "文化革新: 中世纪盛期"
+ late_innovation_decision:0 "文化革新: 中世纪晚期"
+ tribal_regional_innovation_decision:0 "Regional: Tribal"
+ early_regional_innovation_decision:0 "Regional: Early Medival"
+ high_regional_innovation_decision:0 "Regional: High Medival"
+ late_regional_innovation_decision:0 "Regional: Late Medival"
+ 
  no_lifestyle_diplomacy:0 "外交 (用于停止通知)"
  no_lifestyle_martial:0 "军事 (用于停止通知)"
  no_lifestyle_stewardship:0 "管理 (用于停止通知)"
  no_lifestyle_intrigue:0 "谋略 (用于停止通知)"
  no_lifestyle_learning:0 "学识 (用于停止通知)"
+ 
  fulfill_lifestyle:0 "选择相应的生活方式菜单"
+ 
  plus25x_TT:0 "增加:#P 25 #!"
  plus5x_TT:0 "增加:#P 5 #!"
  plus1x_TT:0 "增加:#P 1 #!"
  minus1x_TT:0 "减少:#N 1 #!"
  minus5x_TT:0 "减少:#N 5 #!"
  minus25x_TT:0 "减少:#N 25 #!"
+ 
  dp_char_editor_forward:0 "------->"
  dp_char_editor_backward:0 "<-------"
+ 
  dp_char_editor.modifiers.t:0 "编辑菜单"
  dp_char_editor.modifiers.d:0 "编辑下面的任意属性"
  dp_char_editor.modifiers.prestige.t:0 "威望修改"
@@ -156,20 +194,23 @@
  dp_char_editor.-1.t:0 "减少:#N 1 #!"
  dp_char_editor.-5.t:0 "减少:#N 5 #!"
  dp_char_editor.-25.t:0 "减少:#N 25 #!"
- dp_char_editor_add_more.t:0 "增加更多"
+ dp_char_editor_add_more:0 "增加更多"
  dp_char_editor_add_more_TT:0 "返回上一个修改选项并选择要立即增加的其他修正。"
  dp_char_editor.back.t:0 "返回"
  dp_char_editor.back_TT:0 "清除已添加修正并返回上一个修改界面"
  dp_char_editor.finish.t:0 "完成编辑"
  dp_char_editor.finish_TT:0 "清除选定的修正并返回到修改器屏幕。"
+ 
  monthly_diplomacy_xp:0 "[diplomacy_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_martial_xp:0 "[martial_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_stewardship_xp:0 "[stewardship_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_intrigue_xp:0 "[intrigue_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_learning_xp:0 "[learning_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
+ 
  modifier_mult_tag:0 "#weak (系数)#!"
  modifier_baron_tag:0 "#weak (包括男爵领)#!"
  modifier_ex_heir_tag:0 "#weak (不含继承人)#!"
+ 
  diplomacy_per_prestige_level:0 "$MOD_DIPLOMACY_PER_PRESTIGE_LEVEL$"
  martial_per_prestige_level:0 "$MOD_MARTIAL_PER_PRESTIGE_LEVEL$"
  stewardship_per_prestige_level:0 "$MOD_STEWARDSHIP_PER_PRESTIGE_LEVEL$"
@@ -271,7 +312,6 @@
  negate_health_penalty:0 "$MOD_HEALTH_NEGATE_PENALTY$"
  monthly_dynasty_prestige:0 "$MOD_MONTHLY_DYNASTY_PRESTIGE$"
  monthly_dynasty_prestige_mult:0 "$MOD_MONTHLY_DYNASTY_PRESTIGE_MULT$"
- random_skills_per_child:0 "$MOD_RANDOM_SKILLS_PER_CHILD$"
  inbreeding_chance:0 "$MOD_INBREEDING_CHANCE$"
  positive_inactive_inheritance_chance:0 "$MOD_POSITIVE_INACTIVE_INHERITANCE_CHANCE$"
  negative_inactive_inheritance_chance:0 "$MOD_NEGATIVE_INACTIVE_INHERITANCE_CHANCE$"
@@ -527,7 +567,6 @@
  negate_health_penalty_neg:0 "$MOD_HEALTH_NEGATE_PENALTY$"
  monthly_dynasty_prestige_neg:0 "$MOD_MONTHLY_DYNASTY_PRESTIGE$"
  monthly_dynasty_prestige_mult_neg:0 "$MOD_MONTHLY_DYNASTY_PRESTIGE_MULT$"
- random_skills_per_child_neg:0 "$MOD_RANDOM_SKILLS_PER_CHILD$"
  inbreeding_chance_neg:0 "$MOD_INBREEDING_CHANCE$"
  positive_inactive_inheritance_chance_neg:0 "$MOD_POSITIVE_INACTIVE_INHERITANCE_CHANCE$"
  negative_inactive_inheritance_chance_neg:0 "$MOD_NEGATIVE_INACTIVE_INHERITANCE_CHANCE$"
@@ -683,3 +722,7 @@
  monthly_intrigue_lifestyle_xp_gain_mult_neg:0 "[intrigue_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_learning_lifestyle_xp_gain_mult_neg:0 "[learning_i] $MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
  monthly_lifestyle_xp_gain_mult_neg:0 "$MOD_MONTHLY_LIFESTYLE_XP_GAIN_MULT$"
+
+ ### LIT SCRIPTED EFFECTS ###
+ LIT_learned_trait_check_max_TT:1 "This trait is already max level."
+ LIT_learned_trait_check_missing_TT:1 "The selected character doesn't have this trait."

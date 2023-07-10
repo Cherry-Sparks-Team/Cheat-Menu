@@ -850,14 +850,6 @@ modifier_plus_1 = {
 		else = { remove_character_modifier = monthly_dynasty_prestige_mult_neg }
 	}
 	if = {
-		limit = { has_character_flag = random_skills_per_child_flag }
-		if = {
-			limit = { NOT= { has_character_modifier = random_skills_per_child_neg } }
-			add_character_modifier = { modifier = random_skills_per_child }
-		}
-		else = { remove_character_modifier = random_skills_per_child_neg }
-	}
-	if = {
 		limit = { has_character_flag = inbreeding_chance_flag }
 		if = {
 			limit = { NOT= { has_character_modifier = inbreeding_chance_neg } }
@@ -2369,7 +2361,6 @@ remove_all_modifier_flags = {
 	if = { limit = { has_character_flag = negate_health_penalty_flag } remove_character_flag = negate_health_penalty_flag }
 	if = { limit = { has_character_flag = monthly_dynasty_prestige_flag } remove_character_flag = monthly_dynasty_prestige_flag }
 	if = { limit = { has_character_flag = monthly_dynasty_prestige_mult_flag } remove_character_flag = monthly_dynasty_prestige_mult_flag }
-	if = { limit = { has_character_flag = random_skills_per_child_flag } remove_character_flag = random_skills_per_child_flag }
 	if = { limit = { has_character_flag = inbreeding_chance_flag } remove_character_flag = inbreeding_chance_flag }
 	if = { limit = { has_character_flag = positive_inactive_inheritance_chance_flag } remove_character_flag = positive_inactive_inheritance_chance_flag }
 	if = { limit = { has_character_flag = negative_inactive_inheritance_chance_flag } remove_character_flag = negative_inactive_inheritance_chance_flag }
@@ -2649,7 +2640,6 @@ remove_all_modifier_instances = {
 	if = { limit = { has_character_flag = negate_health_penalty_flag } remove_all_character_modifier_instances = negate_health_penalty remove_all_character_modifier_instances = negate_health_penalty_neg }
 	if = { limit = { has_character_flag = monthly_dynasty_prestige_flag } remove_all_character_modifier_instances = monthly_dynasty_prestige remove_all_character_modifier_instances = monthly_dynasty_prestige_neg }
 	if = { limit = { has_character_flag = monthly_dynasty_prestige_mult_flag } remove_all_character_modifier_instances = monthly_dynasty_prestige_mult remove_all_character_modifier_instances = monthly_dynasty_prestige_mult_neg }
-	if = { limit = { has_character_flag = random_skills_per_child_flag } remove_all_character_modifier_instances = random_skills_per_child remove_all_character_modifier_instances = random_skills_per_child_neg }
 	if = { limit = { has_character_flag = inbreeding_chance_flag } remove_all_character_modifier_instances = inbreeding_chance remove_all_character_modifier_instances = inbreeding_chance_neg }
 	if = { limit = { has_character_flag = positive_inactive_inheritance_chance_flag } remove_all_character_modifier_instances = positive_inactive_inheritance_chance remove_all_character_modifier_instances = positive_inactive_inheritance_chance_neg }
 	if = { limit = { has_character_flag = negative_inactive_inheritance_chance_flag } remove_all_character_modifier_instances = negative_inactive_inheritance_chance remove_all_character_modifier_instances = negative_inactive_inheritance_chance_neg }
@@ -2666,10 +2656,6 @@ remove_all_modifier_instances = {
 	if = { limit = { has_character_flag = prowess_per_stress_level_flag } remove_all_character_modifier_instances = prowess_per_stress_level remove_all_character_modifier_instances = prowess_per_stress_level_neg }
 	if = { limit = { has_character_flag = stress_gain_mult_flag } remove_all_character_modifier_instances = stress_gain_mult remove_all_character_modifier_instances = stress_gain_mult_neg }
 	if = { limit = { has_character_flag = stress_loss_mult_flag } remove_all_character_modifier_instances = stress_loss_mult remove_all_character_modifier_instances = stress_loss_mult_neg }
-	#if = { limit = { has_character_flag = scheme_power_flag } remove_all_character_modifier_instances = scheme_power remove_all_character_modifier_instances = scheme_power_neg }
-	#if = { limit = { has_character_flag = scheme_resistance_flag } remove_all_character_modifier_instances = scheme_resistance remove_all_character_modifier_instances = scheme_resistance_neg }
-	#if = { limit = { has_character_flag = scheme_secrecy_flag } remove_all_character_modifier_instances = scheme_secrecy remove_all_character_modifier_instances = scheme_secrecy_neg }
-	#if = { limit = { has_character_flag = scheme_success_chance_flag } remove_all_character_modifier_instances = scheme_success_chance remove_all_character_modifier_instances = scheme_success_chance_neg }
 	if = { limit = { has_character_flag = hostile_scheme_power_flag } remove_all_character_modifier_instances = hostile_scheme_power remove_all_character_modifier_instances = hostile_scheme_power_neg }
 	if = { limit = { has_character_flag = hostile_scheme_power_mult_flag } remove_all_character_modifier_instances = hostile_scheme_power_mult remove_all_character_modifier_instances = hostile_scheme_power_mult_neg }
 	if = { limit = { has_character_flag = personal_scheme_power_flag } remove_all_character_modifier_instances = personal_scheme_power remove_all_character_modifier_instances = personal_scheme_power_neg }
@@ -2929,7 +2915,6 @@ reset_all_modifier_instances = {
 	if = { limit = { has_character_modifier = negate_health_penalty } remove_all_character_modifier_instances = negate_health_penalty }
 	if = { limit = { has_character_modifier = monthly_dynasty_prestige } remove_all_character_modifier_instances = monthly_dynasty_prestige }
 	if = { limit = { has_character_modifier = monthly_dynasty_prestige_mult } remove_all_character_modifier_instances = monthly_dynasty_prestige_mult }
-	if = { limit = { has_character_modifier = random_skills_per_child } remove_all_character_modifier_instances = random_skills_per_child }
 	if = { limit = { has_character_modifier = inbreeding_chance } remove_all_character_modifier_instances = inbreeding_chance }
 	if = { limit = { has_character_modifier = positive_inactive_inheritance_chance } remove_all_character_modifier_instances = positive_inactive_inheritance_chance }
 	if = { limit = { has_character_modifier = negative_inactive_inheritance_chance } remove_all_character_modifier_instances = negative_inactive_inheritance_chance }
@@ -3206,7 +3191,6 @@ reset_all_modifier_instances = {
 	if = { limit = { has_character_modifier = negate_health_penalty_neg } remove_all_character_modifier_instances = negate_health_penalty_neg }
 	if = { limit = { has_character_modifier = monthly_dynasty_prestige_neg } remove_all_character_modifier_instances = monthly_dynasty_prestige_neg }
 	if = { limit = { has_character_modifier = monthly_dynasty_prestige_mult_neg } remove_all_character_modifier_instances = monthly_dynasty_prestige_mult_neg }
-	if = { limit = { has_character_modifier = random_skills_per_child_neg } remove_all_character_modifier_instances = random_skills_per_child_neg }
 	if = { limit = { has_character_modifier = inbreeding_chance_neg } remove_all_character_modifier_instances = inbreeding_chance_neg }
 	if = { limit = { has_character_modifier = positive_inactive_inheritance_chance_neg } remove_all_character_modifier_instances = positive_inactive_inheritance_chance_neg }
 	if = { limit = { has_character_modifier = negative_inactive_inheritance_chance_neg } remove_all_character_modifier_instances = negative_inactive_inheritance_chance_neg }
@@ -4192,14 +4176,6 @@ modifier_minus_1 = {
 			add_character_modifier = { modifier = monthly_dynasty_prestige_mult_neg }
 		}
 		else = { remove_character_modifier = monthly_dynasty_prestige_mult }
-	}
-	if = {
-		limit = { has_character_flag = random_skills_per_child_flag }
-		if = {
-			limit = { NOT= { has_character_modifier = random_skills_per_child } }
-			add_character_modifier = { modifier = random_skills_per_child_neg }
-		}
-		else = { remove_character_modifier = random_skills_per_child }
 	}
 	if = {
 		limit = { has_character_flag = inbreeding_chance_flag }
